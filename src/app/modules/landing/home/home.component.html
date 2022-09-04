@@ -1,0 +1,53 @@
+<section class="sec">
+    <header>
+        <a href="#"><img src="logo.png" class="logo"></a>
+        <ul>
+            <li> <a href="#"> Home</a></li>
+            <li> <a href="#"> Products</a></li>
+            <li> <a href="#"> Whats's new</a></li>
+            <li> <a href="#"> Newsletter</a></li>
+            <li> <a href="#"> Contact</a></li>
+        </ul>
+    </header>
+    <div class="content">
+        <div class="textBox">
+            <h2>That's What <br><span>Realty365</span> </h2>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard
+                dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                make a type specimen
+                book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially
+                unchanged.
+            </p>
+            <a href="#"> Login</a>
+            <a href="#"> Free trial</a>
+        </div>
+        <div class="imgBox">
+            <img src="pepsi001.png" class="pepsi">
+        </div>
+
+    </div>
+    <ul class="thumb">
+        <li><img src="pepsi001.png" onclick="imgSelector('pepsi001.png');changeBgColor('#0062be')"> </li>
+        <li><img src="pepsi002.png" onclick="imgSelector('pepsi002.png');changeBgColor('#e60c2c')"> </li>
+        <li><img src="pepsi003.png" onclick="imgSelector('pepsi003.png');changeBgColor('#1e1e1e')"> </li>
+    </ul>
+    <ul class="sci">
+        <li><a href="#"> <img src="facebook.png"></a> </li>
+        <li><a href="#"> <img src="twitter.png"></a> </li>
+        <li><a href="#"> <img src="instagram.png"></a> </li>
+    </ul>
+</section>
+<script type="text/javascript">
+
+    function imgSelector(image) {
+        document.querySelector('.pepsi').src = image;
+    }
+
+    function changeBgColor(color) {
+        const sec = document.querySelector('.sec');
+        sec.style.background = color;
+    }
+</script>
