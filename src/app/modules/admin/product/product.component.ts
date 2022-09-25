@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
+  public display: number = 1;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeDisplay(mode: number): void {
+    this.display = mode;
   }
 
 }

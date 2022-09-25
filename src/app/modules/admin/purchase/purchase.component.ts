@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./purchase.component.scss']
 })
 export class PurchaseComponent implements OnInit {
+  public display: number = 1;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  changeDisplay(mode: number): void {
+    this.display = mode;
+  }
+
 
 }

@@ -87,9 +87,12 @@ export const appRoutes: Route[] = [
             {path: 'inventories', loadChildren: () => import('app/modules/admin/inventory/inventory.module').then(m => m.InventoryModule)},
             {path: 'sales', loadChildren: () => import('app/modules/admin/purchase/purchase.module').then(m => m.PurchaseModule)},
             {path: 'branches', loadChildren: () => import('app/modules/admin/branch/branch.module').then(m => m.BranchModule)},
+           
             
         ]},
         {path: 'accounting', children: [
+            {path: 'invoices', loadChildren: () => import('app/modules/admin/invoices/invoices.module').then(m => m.InvoicesModule)},
+            {path: 'documents', loadChildren: () => import('app/modules/admin/documents/documents.module').then(m => m.DocumentsModule)},
 
 
         ]},

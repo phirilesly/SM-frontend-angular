@@ -59,11 +59,11 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link : '/accounting/invoices'
             },
             {
-                id   : 'accounting.reports',
-                title: 'Reports',
+                id   : 'accounting.documents',
+                title: 'Documents',
                 type : 'basic',
                 icon : 'heroicons_outline:document-report',
-                link : '/accounting/reports'
+                link : '/accounting/documents'
             }
            
         ]
@@ -104,43 +104,36 @@ export const compactNavigation: FuseNavigationItem[] = [
                 id   : 'main.dashboard',
                 title: 'Dashboard',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/dashboard'
+                icon : 'heroicons_outline:home',
+                link : '/main/dashboard'
             },
             {
                 id   : 'main.product',
                 title: 'Products',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/products'
+                icon : 'heroicons_outline:archive',
+                link : '/main/products'
             },
             {
                 id   : 'main.inventory',
                 title: 'Inventories',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/inventories'
+                icon : 'heroicons_outline:collection',
+                link : '/main/inventories'
             },
             {
                 id   : 'sale',
-                title: 'Sales',
+                title: 'Daily Sales',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/sales'
+                icon : 'heroicons_outline:cash',
+                link : '/main/sales'
             }, 
             {
                 id   : 'branch',
-                title: 'Branches',
+                title: 'My Branches',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/branches'
-            },
-            {
-                id   : 'user',
-                title: 'Users',
-                type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/users'
+                icon : 'heroicons_outline:library',
+                link : '/main/branches'
             }
         ]
     }, 
@@ -154,15 +147,15 @@ export const compactNavigation: FuseNavigationItem[] = [
                 id   : 'accounting.invoices',
                 title: 'Invoices',
                 type : 'basic',
-                icon : 'heroicons_outline:clipboard-check',
+                icon : 'heroicons_outline:clipboard-list',
                 link : '/accounting/invoices'
             },
             {
-                id   : 'accounting.reports',
-                title: 'Reports',
+                id   : 'accounting.documents',
+                title: 'Documents',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/accounting/reports'
+                icon : 'heroicons_outline:document-report',
+                link : '/accounting/documents'
             }
            
         ]
@@ -175,17 +168,17 @@ export const compactNavigation: FuseNavigationItem[] = [
         children: [
             {
                 id   : 'settings.accounts',
-                title: 'Accounts',
+                title: 'My Business',
                 type : 'basic',
-                icon : 'heroicons_outline:clipboard-check',
-                link : '/accounting/accounts'
+                icon : 'heroicons_outline:user-add',
+                link : '/settings/accounts'
             },
             {
                 id   : 'settings.users',
                 title: 'Users',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/setting/users'
+                icon : 'heroicons_outline:users',
+                link : '/settings/users'
             }
            
         ]
@@ -202,43 +195,36 @@ export const futuristicNavigation: FuseNavigationItem[] = [
                 id   : 'main.dashboard',
                 title: 'Dashboard',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/dashboard'
+                icon : 'heroicons_outline:home',
+                link : '/main/dashboard'
             },
             {
                 id   : 'main.product',
                 title: 'Products',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/products'
+                icon : 'heroicons_outline:archive',
+                link : '/main/products'
             },
             {
                 id   : 'main.inventory',
                 title: 'Inventories',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/inventories'
+                icon : 'heroicons_outline:collection',
+                link : '/main/inventories'
             },
             {
                 id   : 'sale',
-                title: 'Sales',
+                title: 'Daily Sales',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/sales'
+                icon : 'heroicons_outline:cash',
+                link : '/main/sales'
             }, 
             {
                 id   : 'branch',
-                title: 'Branches',
+                title: 'My Branches',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/branches'
-            },
-            {
-                id   : 'user',
-                title: 'Users',
-                type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/users'
+                icon : 'heroicons_outline:library',
+                link : '/main/branches'
             }
         ]
     }, 
@@ -252,15 +238,15 @@ export const futuristicNavigation: FuseNavigationItem[] = [
                 id   : 'accounting.invoices',
                 title: 'Invoices',
                 type : 'basic',
-                icon : 'heroicons_outline:clipboard-check',
+                icon : 'heroicons_outline:clipboard-list',
                 link : '/accounting/invoices'
             },
             {
-                id   : 'accounting.reports',
-                title: 'Reports',
+                id   : 'accounting.documents',
+                title: 'Documents',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/accounting/reports'
+                icon : 'heroicons_outline:document-report',
+                link : '/accounting/documents'
             }
            
         ]
@@ -273,17 +259,17 @@ export const futuristicNavigation: FuseNavigationItem[] = [
         children: [
             {
                 id   : 'settings.accounts',
-                title: 'Accounts',
+                title: 'My Business',
                 type : 'basic',
-                icon : 'heroicons_outline:clipboard-check',
-                link : '/accounting/accounts'
+                icon : 'heroicons_outline:user-add',
+                link : '/settings/accounts'
             },
             {
                 id   : 'settings.users',
                 title: 'Users',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/setting/users'
+                icon : 'heroicons_outline:users',
+                link : '/settings/users'
             }
            
         ]
@@ -300,43 +286,36 @@ export const horizontalNavigation: FuseNavigationItem[] = [
                 id   : 'main.dashboard',
                 title: 'Dashboard',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/dashboard'
+                icon : 'heroicons_outline:home',
+                link : '/main/dashboard'
             },
             {
                 id   : 'main.product',
                 title: 'Products',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/products'
+                icon : 'heroicons_outline:archive',
+                link : '/main/products'
             },
             {
                 id   : 'main.inventory',
                 title: 'Inventories',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/inventories'
+                icon : 'heroicons_outline:collection',
+                link : '/main/inventories'
             },
             {
                 id   : 'sale',
-                title: 'Sales',
+                title: 'Daily Sales',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/sales'
+                icon : 'heroicons_outline:cash',
+                link : '/main/sales'
             }, 
             {
                 id   : 'branch',
-                title: 'Branches',
+                title: 'My Branches',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/branches'
-            },
-            {
-                id   : 'user',
-                title: 'Users',
-                type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/users'
+                icon : 'heroicons_outline:library',
+                link : '/main/branches'
             }
         ]
     }, 
@@ -350,15 +329,15 @@ export const horizontalNavigation: FuseNavigationItem[] = [
                 id   : 'accounting.invoices',
                 title: 'Invoices',
                 type : 'basic',
-                icon : 'heroicons_outline:clipboard-check',
+                icon : 'heroicons_outline:clipboard-list',
                 link : '/accounting/invoices'
             },
             {
-                id   : 'accounting.reports',
-                title: 'Reports',
+                id   : 'accounting.documents',
+                title: 'Documents',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/accounting/reports'
+                icon : 'heroicons_outline:document-report',
+                link : '/accounting/documents'
             }
            
         ]
@@ -371,17 +350,17 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         children: [
             {
                 id   : 'settings.accounts',
-                title: 'Accounts',
+                title: 'My Business',
                 type : 'basic',
-                icon : 'heroicons_outline:clipboard-check',
-                link : '/accounting/accounts'
+                icon : 'heroicons_outline:user-add',
+                link : '/settings/accounts'
             },
             {
                 id   : 'settings.users',
                 title: 'Users',
                 type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/setting/users'
+                icon : 'heroicons_outline:users',
+                link : '/settings/users'
             }
            
         ]

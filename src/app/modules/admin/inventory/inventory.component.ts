@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
+  public display: number = 1;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeDisplay(mode: number): void {
+    this.display = mode;
   }
 
 }

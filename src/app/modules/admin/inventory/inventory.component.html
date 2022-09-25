@@ -1,239 +1,505 @@
-<div class="flex flex-col space-y-8 py-8">
-    <!-- First Row -->
-    <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 px-4 xl:p-0 gap-y-4 md:gap-6">
-        <div class="md:col-span-2 xl:col-span-3 bg-white p-6 rounded-2xl border border-gray-50">
-            <div class="flex flex-col space-y-6 md:h-full md:justify-between">
-                <div class="flex justify-between">
-                    <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">
-                        Main Account
-                    </span>
-                    <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider">
-                        Available Funds
-                    </span>
-                </div>
-                <div class="flex gap-2 md:gap-4 justify-between items-center">
-                    <div class="flex flex-col space-y-4">
-                        <h2 class="text-gray-800 font-bold tracking-widest leading-tight">XXXX's Savings
-                            Account</h2>
-                        <div class="flex items-center gap-4">
-                            <p class="text-lg text-gray-600 tracking-wider">**** **** *321</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </div>
+<div class="flex flex-col w-full">
+    <!-- ========================================== -->
+    <!-- ==============    HEADER   =============== -->
+    <!-- ========================================== -->
+    <div class="flex flex-col border-b bg-white dark:bg-transparent">
+        <div
+            class="flex flex-row sm:items-center justify-between p-6 w-full max-w-screen-xl mx-auto sm:py-8 sm:px-10"
+        >
+            <div class="flex-1 min-w-0">
+                <!-- Breadcrumbs -->
+                <div class="hidden sm:flex flex-wrap items-center font-medium">
+                    <div>
+                        <a class="whitespace-nowrap text-primary-500"> Main </a>
                     </div>
-                    <h2 class="text-lg md:text-xl xl:text-3xl text-gray-700 font-black tracking-wider">
-                        <span class="md:text-xl">$</span>
-                        92,817.45
-                    </h2>
+
+                    <div class="flex items-center ml-1 whitespace-nowrap">
+                        <mat-icon
+                            svgIcon="heroicons_outline:chevron-right"
+                        ></mat-icon>
+                        <span class="ml-1 text-primary-500">Inventories</span>
+                    </div>
                 </div>
-                <div class="flex gap-2 md:gap-4">
-                    <a href="#"
-                        class="bg-blue-600 px-5 py-3 w-full text-center md:w-auto rounded-lg text-white text-xs tracking-wider font-semibold hover:bg-blue-800">
-                        Transfer Money
-                    </a>
-                    <a href="#"
-                        class="bg-blue-50 px-5 py-3 w-full text-center md:w-auto rounded-lg text-blue-600 text-xs tracking-wider font-semibold hover:bg-blue-600 hover:text-white">
-                        Link Account
-                    </a>
+                <!-- Title -->
+                <div class="mt-2">
+                    <div
+                        class="text-4xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate text-dark-900"
+                    >
+                        Inventories
+                    </div>
                 </div>
+            </div>
+
+            <div class="flex flex-row items-center space-x-2">
+                <button
+                    class="fuse-mat-button-rounded bg-accent-700"
+                    mat-flat-button
+                    [color]="'accent'"
+                    [routerLink]="['./add']">
+                
+                   
+                    <span class="ml-2">New Inventory</span>
+                </button>
             </div>
         </div>
+    </div>
+
+    <div class="flex  p-5 gap-4 mt-5 w-full max-w-screen-xl mx-auto">
+        <!-- ========================================== -->
+        <!-- ============== FILTERS =============== -->
+        <!-- ========================================== -->
         <div
-            class="col-span-2 p-6 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-800 flex flex-col justify-between">
-            <div class="flex flex-col">
-                <p class="text-white font-bold">Lorem ipsum dolor sit amet</p>
-                <p class="mt-1 text-xs md:text-sm text-gray-50 font-light leading-tight max-w-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio soluta saepe consequuntur
-                    facilis ab a. Molestiae ad saepe assumenda praesentium rem dolore? Exercitationem, neque
-                    obcaecati?
-                </p>
+            class="grid grid-cols-2 sm:grid-cols-4  w-full "
+        >
+            <div class="flex flex-col items-start">
+                <label
+                    for="underline_select"
+                    class="font-bold uppercase text-xs"
+                    >Search by name / barcode:</label
+                >
+                <input
+                    class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                    type="text"
+                    placeholder="Type product name..."
+                />
             </div>
-            <div class="flex justify-between items-end">
-                <a href="#"
-                    class="bg-blue-800 px-4 py-3 rounded-lg text-white text-xs tracking-wider font-semibold hover:bg-blue-600 hover:text-white">
-                    Learn More
-                </a>
-                <img src="images/calendar.png" alt="calendar" class="w-auto h-24 object-cover">
+
+            <div class="flex flex-col items-start">
+                <label
+                    for="underline_select"
+                    class="font-bold uppercase text-xs"
+                    >Filter by category:</label
+                >
+                <select
+                    id="underline_select"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                >
+                    <option selected="">Type category name</option>
+                    <option></option>
+                    <option></option>
+                </select>
             </div>
+            <div class="flex flex-col items-start">
+                <label
+                    for="underline_select"
+                    class="font-bold uppercase text-xs"
+                    >Filter by branch:</label
+                >
+                <select
+                    id="underline_select"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                >
+                    <option selected="">Type brand name</option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div
+                class="flex flex-row items-center justify-end space-x-6 w-full"
+            >
+                <div>
+                    <div class="flex flex-row rounded justify-end" role="group">
+                        <button
+                        (click)="changeDisplay(1)"
+                            type="button"
+                            class="text-dark-900 bg-white border-gray-400 rounded-l-md inline-flex items-center focus:outline-none font-medium text-sm px-3.5 py-2.5 text-primary-900 border-l border-t border-b hover:text-white hover:bg-primary-900 cursor-pointer"
+                        >
+                        <mat-icon
+                        svgIcon="heroicons_outline:view-list"
+                    ></mat-icon>  
+                        </button>
+
+                        <button
+                        (click)="changeDisplay(2)"
+                            type="button"
+                            svgIcon="heroicons_outline:view-list"
+                            class="text-dark-900 bg-white border-gray-400 rounded-r-md inline-flex items-center focus:outline-none font-medium text-sm px-3.5 py-2.5 text-primary-900 border hover:text-white hover:bg-primary-900 cursor-pointer"
+                        >
+                            <mat-icon
+                            svgIcon="heroicons_outline:view-grid"
+                        ></mat-icon>
+                        
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+
+
+
+        <div class="bg-white shadow-md rounded mt-10" *ngIf="display === 1;" >
+            <table class="min-w-max w-full table-auto">
+                <thead>
+                    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        <th class="py-3 px-6 text-left">Name</th>
+                        <th class="py-3 px-6 text-left">Quantity</th>
+                        <th class="py-3 px-6 text-center">Order Price</th>
+                        <th class="py-3 px-6 text-center">Status</th>
+                        <th class="py-3 px-6 text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 text-sm font-light">
+                    <tr class="border-b border-gray-200 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left whitespace-nowrap">
+                            <div class="flex items-center">
+                               
+                                <span class="font-medium">screwdrivers</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                                <span>200</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                                <span>$30</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Active</span>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex item-center justify-center">
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                               
+                                <span class="font-medium">Perfume</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                                <span>102</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                                <span>$10</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex item-center justify-center">
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                               
+                                <span class="font-medium">Hammer</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                                <span>50</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                                <span>$40</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <span class="bg-yellow-200 text-yellow-600 py-1 px-3 rounded-full text-xs">Scheduled</span>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex item-center justify-center">
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                               
+                                <span class="font-medium">Maize meal</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                                <span>50</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                                <span>$7</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Pending</span>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex item-center justify-center">
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                               
+                                <span class="font-medium">Sumsung J2</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                                <span>100</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                                <span>$70</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Active</span>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex item-center justify-center">
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                                
+                                <span class="font-medium">Book</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                                <span>150</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                                <span>$3</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <span class="bg-yellow-200 text-yellow-600 py-1 px-3 rounded-full text-xs">Scheduled</span>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex item-center justify-center">
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                               
+                                <span class="font-medium">Sumsung S8</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                                <span>189</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                                <span>$60</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Pending</span>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex item-center justify-center">
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                               
+                                <span class="font-medium">Sugar</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-left">
+                            <div class="flex items-center">
+                                <span>102</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex items-center justify-center">
+                                <span>$6</span>
+                            </div>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            <div class="flex item-center justify-center">
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+            <div class="flex flex-row mb-3 mt-3">
+                <a href="#" class="inline-flex items-center py-2 px-4 ml-3 mr-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                    Previous
+                  </a>
+                  <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    Next
+                    <svg aria-hidden="true" class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </a>
+
+            </div>
+
         </div>
 
-    </div>
-    <!-- End First Row -->
-    <!-- Start Second Row -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 xl:p-0 gap-4 xl:gap-6">
-        <div class="col-span-1 md:col-span-2 lg:col-span-4 flex justify-between">
-            <h2 class="text-xs md:text-sm text-gray-700 font-bold tracking-wide md:tracking-wider">
-                Expenses By Category</h2>
-            <a href="#" class="text-xs text-gray-800 font-semibold uppercase">More</a>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-50">
-            <div class="flex justify-between items-start">
-                <div class="flex flex-col">
-                    <p class="text-xs text-gray-600 tracking-wide">Foods & Beverages</p>
-                    <h3 class="mt-1 text-lg text-blue-500 font-bold">$ 818</h3>
-                    <span class="mt-4 text-xs text-gray-500">Last Transaction 3 Hours ago</span>
-                </div>
-                <div class="bg-blue-500 p-2 md:p-1 xl:p-2 rounded-md">
-            <img src="images/dish-2.png" alt="icon" class="w-auto h-8 md:h-6 xl:h-8 object-cover">
-                </div>
-            </div>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-50">
-            <div class="flex justify-between items-start">
-                <div class="flex flex-col">
-                    <p class="text-xs text-gray-600 tracking-wide">Groceries</p>
-                    <h3 class="mt-1 text-lg text-green-500 font-bold">$ 8,918</h3>
-                    <span class="mt-4 text-xs text-gray-500">Last Transaction 3 Days ago</span>
-                </div>
-                <div class="bg-green-500 p-2 md:p-1 xl:p-2 rounded-md">
-            <img src="images/grocery.png" alt="icon" class="w-auto h-8 md:h-6 xl:h-8 object-cover">
-                </div>
-            </div>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-50">
-            <div class="flex justify-between items-start">
-                <div class="flex flex-col">
-                    <p class="text-xs text-gray-600 tracking-wide">Gaming</p>
-                    <h3 class="mt-1 text-lg text-yellow-500 font-bold">$ 1,223</h3>
-                    <span class="mt-4 text-xs text-gray-600">Last Transaction 4 Days ago</span>
-                </div>
-                <div class="bg-yellow-500 p-2 md:p-1 xl:p-2 rounded-md">
-            <img src="images/gaming.png" alt="icon" class="w-auto h-8 md:h-6 xl:h-8 object-cover">
-                </div>
-            </div>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-gray-50">
-            <div class="flex justify-between items-start">
-                <div class="flex flex-col">
-                    <p class="text-xs text-gray-600 tracking-wide">Trip & Holiday</p>
-                    <h3 class="mt-1 text-lg text-indigo-500 font-bold">$ 5,918</h3>
-                    <span class="mt-4 text-xs text-gray-500">Last Transaction 1 Month ago</span>
-                </div>
-                <div class="bg-indigo-500 p-2 md:p-1 xl:p-2 rounded-md">
-            <img src="images/holiday.png" alt="icon" class="w-auto h-8 md:h-6 xl:h-8 object-cover">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Second Row -->
-    <!-- Start Third Row -->
-    <div class="grid grid-cols-1 md:grid-cols-5 items-start px-4 xl:p-0 gap-y-4 md:gap-6">
-        <div class="col-start-1 col-end-5">
-            <h2 class="text-xs md:text-sm text-gray-800 font-bold tracking-wide">Summary Transactions</h2>
-        </div>
-        <div class="col-span-2 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 flex justify-between items-center">
-                <div class="p-4 cursor-pointer border">
-                    <span class="text-xs text-gray-500 font-semibold">Daily</span>
-                    <h2 class="text-gray-800 font-bold tracking-wider">$ 27.80</h2>
-                </div>
-                <div class="p-4 cursor-pointer border">
-                    <span class="text-xs text-gray-500 font-semibold">Weekly</span>
-                    <h2 class="text-gray-800 font-bold tracking-wider">$ 192.92</h2>
-                </div>
-                <div class="p-4 cursor-pointer border">
-                    <span class="text-xs text-gray-500 font-semibold">Monthly</span>
-                    <h2 class="text-gray-800 font-bold tracking-wider">$ 501.10</h2>
-                </div>
-            </div>
-            <canvas id="myChart"></canvas>
-        </div>
-        <div class="col-span-3 bg-white p-6 rounded-xl border border-gray-50 flex flex-col space-y-6">
-            <div class="flex justify-between items-center">
-                <h2 class="text-sm text-gray-600 font-bold tracking-wide">Latest Transactions</h2>
-                <a href="#"
-                    class="px-4 py-2 text-xs bg-blue-100 text-blue-500 rounded uppercase tracking-wider font-semibold hover:bg-blue-300">More</a>
-            </div>
-            <ul class="divide-y-2 divide-gray-100 overflow-x-auto w-full">
-                <li class="py-3 flex justify-between text-sm text-gray-500 font-semibold">
-                    <p class="px-4 font-semibold">Today</p>
-                    <p class="px-4 text-gray-600">McDonald</p>
-                    <p class="px-4 tracking-wider">Cash</p>
-                    <p class="px-4 text-blue-600">Food</p>
-                    <p class="md:text-base text-gray-800 flex items-center gap-2">
-                        16.90
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </p>
-                </li>
-                <li class="py-3 flex justify-between text-sm text-gray-500 font-semibold">
-                    <p class="px-4 font-semibold">Today</p>
-                    <p class="px-4 text-gray-600">McDonald</p>
-                    <p class="px-4 tracking-wider">Cash</p>
-                    <p class="px-4 text-blue-600">Food</p>
-                    <p class="md:text-base text-gray-800 flex items-center gap-2">
-                        16.90
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </p>
-                </li>
-                <li class="py-3 flex justify-between text-sm text-gray-500 font-semibold">
-                    <p class="px-4 font-semibold">Today</p>
-                    <p class="px-4 text-gray-600">McDonald</p>
-                    <p class="px-4 tracking-wider">Cash</p>
-                    <p class="px-4 text-blue-600">Food</p>
-                    <p class="md:text-base text-gray-800 flex items-center gap-2">
-                        16.90
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </p>
-                </li>
-                <li class="py-3 flex justify-between text-sm text-gray-500 font-semibold">
-                    <p class="px-4 font-semibold">Today</p>
-                    <p class="px-4 text-gray-600">McDonald</p>
-                    <p class="px-4 tracking-wider">Cash</p>
-                    <p class="px-4 text-blue-600">Food</p>
-                    <p class="md:text-base text-gray-800 flex items-center gap-2">
-                        16.90
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </p>
-                </li>
-                <li class="py-3 flex justify-between text-sm text-gray-500 font-semibold">
-                    <p class="px-4 font-semibold">Today</p>
-                    <p class="px-4 text-gray-600">McDonald</p>
-                    <p class="px-4 tracking-wider">Cash</p>
-                    <p class="px-4 text-blue-600">Food</p>
-                    <p class="md:text-base text-gray-800 flex items-center gap-2">
-                        16.90
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </p>
-                </li>
-                <li class="py-3 flex justify-between text-sm text-gray-500 font-semibold">
-                    <p class="px-4 font-semibold">Today</p>
-                    <p class="px-4 text-gray-600">McDonald</p>
-                    <p class="px-4 tracking-wider">Cash</p>
-                    <p class="px-4 text-blue-600">Food</p>
-                    <p class="md:text-base text-gray-800 flex items-center gap-2">
-                        16.90
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- End Third Row -->
+        <app-grid *ngIf="display === 2;">
+
+        </app-grid>
+        
+       
+            
+        
 </div>
+
+
+
+
+
+    
+
