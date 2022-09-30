@@ -74,19 +74,20 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type    : 'group',
         icon    : 'heroicons_outline:home',
         children: [
-            {
-                id   : 'settings.accounts',
-                title: 'My Business',
-                type : 'basic',
-                icon : 'heroicons_outline:user-add',
-                link : '/settings/accounts'
-            },
+          
             {
                 id   : 'settings.users',
                 title: 'Users',
                 type : 'basic',
                 icon : 'heroicons_outline:users',
                 link : '/settings/users'
+            },
+            {
+                id   : 'settings.profile',
+                title: 'My Business',
+                type : 'basic',
+                icon : 'heroicons_outline:user-add',
+                link : '/settings/profile'
             }
            
         ]
@@ -166,19 +167,20 @@ export const compactNavigation: FuseNavigationItem[] = [
         type    : 'group',
         icon    : 'heroicons_outline:home',
         children: [
-            {
-                id   : 'settings.accounts',
-                title: 'My Business',
-                type : 'basic',
-                icon : 'heroicons_outline:user-add',
-                link : '/settings/accounts'
-            },
+          
             {
                 id   : 'settings.users',
                 title: 'Users',
                 type : 'basic',
                 icon : 'heroicons_outline:users',
                 link : '/settings/users'
+            },
+            {
+                id   : 'settings.profile',
+                title: 'My Business',
+                type : 'basic',
+                icon : 'heroicons_outline:user-add',
+                link : '/settings/profile'
             }
            
         ]
@@ -257,19 +259,20 @@ export const futuristicNavigation: FuseNavigationItem[] = [
         type    : 'group',
         icon    : 'heroicons_outline:home',
         children: [
-            {
-                id   : 'settings.accounts',
-                title: 'My Business',
-                type : 'basic',
-                icon : 'heroicons_outline:user-add',
-                link : '/settings/accounts'
-            },
+          
             {
                 id   : 'settings.users',
                 title: 'Users',
                 type : 'basic',
                 icon : 'heroicons_outline:users',
                 link : '/settings/users'
+            },
+            {
+                id   : 'settings.profile',
+                title: 'My Business',
+                type : 'basic',
+                icon : 'heroicons_outline:user-add',
+                link : '/settings/profile'
             }
            
         ]
@@ -348,19 +351,20 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         type    : 'group',
         icon    : 'heroicons_outline:home',
         children: [
-            {
-                id   : 'settings.accounts',
-                title: 'My Business',
-                type : 'basic',
-                icon : 'heroicons_outline:user-add',
-                link : '/settings/accounts'
-            },
+          
             {
                 id   : 'settings.users',
                 title: 'Users',
                 type : 'basic',
                 icon : 'heroicons_outline:users',
                 link : '/settings/users'
+            },
+            {
+                id   : 'settings.profile',
+                title: 'My Business',
+                type : 'basic',
+                icon : 'heroicons_outline:user-add',
+                link : '/settings/profile'
             }
            
         ]

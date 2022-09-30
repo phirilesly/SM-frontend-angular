@@ -1,29 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DocumentsComponent } from './documents.component';
+import { ProfileComponent } from './profile.component';
 import { Route, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { FuseCardModule } from '@fuse/components/card';
 import { MatButtonModule } from '@angular/material/button';
 
-const documentsRoutes: Route[] = [
+const profileRoutes: Route[] = [
   {
       path     : '',
-      component: DocumentsComponent
+      component: ProfileComponent
   }
 ];
 
-
 @NgModule({
   declarations: [
-    DocumentsComponent
+    ProfileComponent
   ],
   imports: [
     CommonModule,
     MatIconModule,
     FuseCardModule,
     MatButtonModule,
-    RouterModule.forChild(documentsRoutes)
+    RouterModule.forChild(profileRoutes)
   ]
 })
-export class DocumentsModule { }
+export class ProfileModule { }

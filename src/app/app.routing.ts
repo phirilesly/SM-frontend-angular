@@ -97,7 +97,8 @@ export const appRoutes: Route[] = [
 
         ]},
         {path: 'settings', children: [
-            {path: 'users', loadChildren: () => import('app/modules/admin/user/user.module').then(m => m.UserModule)}
+            {path: 'users', loadChildren: () => import('app/modules/admin/user/user.module').then(m => m.UserModule)},
+            {path: 'profile', loadChildren: () => import('app/modules/admin/profile/profile.module').then(m => m.ProfileModule)}
 
         ]},
 

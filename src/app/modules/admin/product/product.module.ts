@@ -25,6 +25,11 @@ const productRoutes: Route[] = [
   path: 'add',
   component: EditComponent
  
+},
+{
+  path: 'details/:id',
+  component: DetailsComponent
+ 
 }
   
 ];

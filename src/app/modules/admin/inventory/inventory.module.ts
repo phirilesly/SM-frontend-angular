@@ -23,10 +23,15 @@ const inventoryRoutes: Route[] = [
       path: 'add',
       component: EditComponent
      
+    },
+    {
+      path: 'details/:id',
+      component: DetailsComponent
+     
     }
       
     ];
-    
+
 @NgModule({
   declarations: [
     InventoryComponent,
