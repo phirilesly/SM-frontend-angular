@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="flex flex-col w-full">
 
     <div class="flex flex-col border-b bg-white dark:bg-transparent">
@@ -12,7 +13,7 @@
                     <div
                         class="text-4xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate text-dark-900"
                     >
-                       New Product
+                       Update Product
                     </div>
                 </div>
             </div>
@@ -22,7 +23,7 @@
                     class="fuse-mat-button-rounded bg-accent-700"
                     mat-flat-button
                     [color]="'accent'"
-                    [routerLink]="['./add']">
+                    (click)="onCancle()">
                 
                    
                     <span class="ml-2">Cancel</span>
@@ -34,21 +35,34 @@
     <div class="flex-auto sm:p-10 p-6 w-full max-w-screen-xl mx-auto">
         
                          <div class="border sm:p-14 p-6 rounded-md bg-white">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">                      
+                            <form [formGroup] = "productForm">   
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">  
+                                      
                             <div class="flex flex-col w-full sm: sm:col-span-2 space-y-2">
                                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Product Name</label>
-                                <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                <input type="text" [formControlName]="'name'" class="form-control" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                                 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
                                 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            
                                
+                            </div>
+
+                            <div class="flex flex-col sm:col-span-2  w-full space-y-2">
+                                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Supplier</label>
+                                <input type="text" [formControlName]="'supplier'" class="form-control" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+                                dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                             
+                                
                             </div>
                             
 
                             <div class="flex flex-col sm:col-span-2  w-full space-y-2">
                                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Barcode</label>
-                                <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                <input type="text" [formControlName]="'barcode'" class="form-control" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                                 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
                                 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                             
                                 
                             </div>
 
@@ -56,26 +70,24 @@
 
                                 <div class="flex flex-row">
                                     <div class="basis-1/2 w-full">
-                                        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Category</label>
-                                <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option>United States</option>
-                                <option>Canada</option>
-                                <option>France</option>
-                                <option>Germany</option>
-                                </select>
+                                        <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Category</label>
+                                <input type="text" [formControlName]="'category'" class="form-control" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+                                dark:focus:ring-blue-500 dark:focus:border-blue-500">
+               
+                              
 
 
                                     </div>
                                    
                                     <div class="basis-1/2 w-full pl-2">
                                         
-                                <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Brand</label>
-                                <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option>United States</option>
-                                <option>Canada</option>
-                                <option>France</option>
-                                <option>Germany</option>
-                                </select>
+                                        <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Brand</label>
+                                        <input type="text" [formControlName]="'brand'" class="form-control" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                        focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
+                                        dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    
+                              
                                
                                     </div>
                                   </div>
@@ -88,28 +100,29 @@
 
                                 
                                 <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Price</label>
-                                <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                                <input type="number" [formControlName]="'price'" class="form-control" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                                 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
                                 dark:focus:ring-blue-500 dark:focus:border-blue-500">
-  
-                                  
+                             
                               </div>    
+
                             <div class="flex flex-col w-full sm:col-span-2 space-y-2">
                                 
                               <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Description</label>
-                              <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border
+                              <textarea  type="text" [formControlName]="'description'" class="form-control" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border
                                border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
                                 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
 
-                               
+                              
                             </div>
 
                           
 
-                                                                        
+                                                               
 
                                                      
                         </div>
+                    </form>  
 
                         <div class="flex justify-end mt-5 ...">
                             <div>
@@ -118,10 +131,11 @@
                                 class="fuse-mat-button-rounded bg-accent-700"
                                 mat-flat-button
                                 [color]="'accent'"
-                                [routerLink]="['./add']">
+                               
+                                (click)="onSubmit()">
                             
                                
-                                <span class="ml-2">Save</span>
+                                <span class="ml-2">Create</span>
                             </button>
 
                             </div>

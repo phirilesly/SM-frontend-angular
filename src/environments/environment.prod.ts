@@ -1,3 +1,4 @@
 export const environment = {
-    production: true
+    production: true,
+    stockmanagerUrl: 'https://localhost:44390'
 };

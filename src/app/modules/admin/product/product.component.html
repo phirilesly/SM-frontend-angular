@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="flex flex-col w-full">
     <!-- ========================================== -->
     <!-- ==============    HEADER   =============== -->
@@ -57,10 +58,10 @@
                     class="font-bold uppercase text-xs"
                     >Search by name / barcode:</label
                 >
-                <input
+                <input matInput (keyup)="applyFilter($event)"
                     class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                     type="text"
-                    placeholder="Type product name..."
+                    placeholder="Type product name..." #input
                 />
             </div>
 
@@ -132,359 +133,103 @@
 
 
         <div class="bg-white shadow-md rounded mt-10" *ngIf="display === 1;" >
-            <table class="min-w-max w-full table-auto">
-                <thead>
-                    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                        <th class="py-3 px-6 text-left">Name</th>
-                        <th class="py-3 px-6 text-left">Category</th>
-                        <th class="py-3 px-6 text-center">Price</th>
-                        <th class="py-3 px-6 text-center">Status</th>
-                        <th class="py-3 px-6 text-center">Actions</th>
-                    </tr>
-                </thead>
-                <tbody class="text-gray-600 text-sm font-light">
-                    <tr class="border-b border-gray-200 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left whitespace-nowrap">
-                            <div class="flex items-center">
-                               
-                                <span class="font-medium">screwdrivers</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                                <span>Hardware</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex items-center justify-center">
-                                <span>$30</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Active</span>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex item-center justify-center">
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg [routerLink]="['./details/1']" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg [routerLink]="['./edit/1']" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                               
-                                <span class="font-medium">Perfume</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                                <span>Cosmetics</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex items-center justify-center">
-                                <span>$10</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex item-center justify-center">
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-gray-200 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                               
-                                <span class="font-medium">Hammer</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                                <span>Hardware</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex items-center justify-center">
-                                <span>$40</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <span class="bg-yellow-200 text-yellow-600 py-1 px-3 rounded-full text-xs">Scheduled</span>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex item-center justify-center">
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                               
-                                <span class="font-medium">Maize meal</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                                <span>Groceries</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex items-center justify-center">
-                                <span>$7</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Pending</span>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex item-center justify-center">
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-gray-200 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                               
-                                <span class="font-medium">Sumsung J2</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                                <span>Gadgets</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex items-center justify-center">
-                                <span>$70</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Active</span>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex item-center justify-center">
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                                
-                                <span class="font-medium">Book</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                                <span>Stationary</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex items-center justify-center">
-                                <span>$3</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <span class="bg-yellow-200 text-yellow-600 py-1 px-3 rounded-full text-xs">Scheduled</span>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex item-center justify-center">
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-gray-200 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                               
-                                <span class="font-medium">Sumsung S8</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                                <span>Gadgets</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex items-center justify-center">
-                                <span>$60</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Pending</span>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex item-center justify-center">
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                               
-                                <span class="font-medium">Sugar</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-left">
-                            <div class="flex items-center">
-                                <span>Groceries</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex items-center justify-center">
-                                <span>$6</span>
-                            </div>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
-                        </td>
-                        <td class="py-3 px-6 text-center">
-                            <div class="flex item-center justify-center">
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                    </svg>
-                                </div>
-                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-                
-            </table>
-            <div class="flex flex-row mb-3 mt-3">
-                <a href="#" class="inline-flex items-center py-2 px-4 ml-3 mr-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
-                    Previous
-                  </a>
-                  <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                    Next
-                    <svg aria-hidden="true" class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </a>
 
+            <table mat-table [dataSource]="dataSource" matSort class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th class="font-bold py-3 px-6 text-left" mat-header-cell *matHeaderCellDef mat-sort-header > ID </th>
+              <td class="py-3 px-6 text-center"  mat-cell *matCellDef="let row" >
+                <div class="flex items-center">
+                    {{row.id}}
+                </div>
+            </td>
+            </ng-container>
+        
+            <!-- name Column -->
+            <ng-container matColumnDef="name">
+              <th class="font-bold py-3 px-6 text-left" mat-header-cell *matHeaderCellDef mat-sort-header > Product Name </th>
+              <td class="py-3 px-6 text-center"  mat-cell *matCellDef="let row">
+                <div class="flex items-center">
+                {{row.name}}
             </div>
+            </td>
+            </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="category">
+                    <th class="font-bold py-3 px-6 text-left" mat-header-cell *matHeaderCellDef mat-sort-header > Category </th>
+                    <td class="py-3 px-6 text-center"  mat-cell *matCellDef="let row" >
+                        <div class="flex items-center">
+                        {{row.category}}
+                    </div>
+                    </td>
+                  </ng-container>
+              
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="barcode">
+              <th class="font-bold py-3 px-6 text-left" mat-header-cell *matHeaderCellDef mat-sort-header > BarCode </th>
+              <td class="py-3 px-6 text-center"  mat-cell *matCellDef="let row" >
+                <div class="flex items-center">
+                {{row.barcode}}
+            </div>
+            </td>
+            </ng-container>
+        
+        
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="price">
+              <th class="font-bold py-3 px-6 text-left" mat-header-cell *matHeaderCellDef mat-sort-header > Price</th>
+              <td class="py-3 px-6 text-center" mat-cell *matCellDef="let row" >
+                <div class="flex items-center">
+                {{row.price | currency}}
+            </div></td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <th class="font-bold py-3 px-6 text-left" mat-header-cell *matHeaderCellDef mat-sort-header > Action</th>
+             <td class="py-3 px-6 text-center" mat-cell *matCellDef="let row" >
+                <div class="flex item-center">
+                    <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                        <button
+                        mat-icon-button  [routerLink]="['./details/1']"
+                        >
+                        <mat-icon svgIcon="heroicons_outline:eye"></mat-icon>
+                    </button>
+
+                    </div>
+                    <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                      
+                        <button
+                        mat-icon-button
+                        (click)="updateProduct(row.id)">
+                        <mat-icon svgIcon="heroicons_outline:pencil"></mat-icon>
+                    </button>
+                    
+                    </div>
+                    <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                        
+                        <button
+                        mat-icon-button
+                        (click)="deleteProduct(row.id)">
+                        <mat-icon svgIcon="heroicons_outline:trash"></mat-icon>
+                    </button>
+                    </div>
+                </div>
+             </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+           
 
         </div>
 
@@ -499,7 +244,4 @@
 
 
 
-
-
-    
 

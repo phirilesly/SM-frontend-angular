@@ -7,6 +7,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { FuseCardModule } from '@fuse/components/card';
 import { AddBranchComponent } from './add-branch/add-branch.component';
 import { DetailsComponent } from './details/details.component';
+import { EditBranchComponent } from './edit-branch/edit-branch.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ToastModule } from 'primeng/toast';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const branchRoutes: Route[] = [
   {
@@ -34,13 +40,20 @@ const branchRoutes: Route[] = [
   declarations: [
     BranchComponent,
     AddBranchComponent,
-    DetailsComponent
+    DetailsComponent,
+    EditBranchComponent
   ],
   imports: [
     CommonModule,
-    MatIconModule,
     FuseCardModule,
+    MatIconModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    ToastModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(branchRoutes)
 
   ]

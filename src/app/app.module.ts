@@ -17,6 +17,7 @@ import { appRoutes } from 'app/app.routing';
 
 
 
+
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
     scrollPositionRestoration: 'enabled'
@@ -47,6 +48,7 @@ const routerConfig: ExtraOptions = {
 
         // Layout module of your application
         LayoutModule,
+    
 
         // 3rd party modules that require global configuration via forRoot
         MarkdownModule.forRoot({})
