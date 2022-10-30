@@ -6,13 +6,15 @@ import { LandingComponent } from './landing.component';
 const landingRoutes: Route[] = [
   {
       path     : '',
-      component: LandingComponent
+      component: LandingComponent,
+
+     
   }
-];
+]
 
 @NgModule({
   declarations: [
-    LandingComponent
+   LandingComponent
   ],
   imports: [
     CommonModule,

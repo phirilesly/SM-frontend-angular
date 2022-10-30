@@ -6,7 +6,6 @@ import { Product } from 'app/shared/models/product.model';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { ConfirmationService, MessageService } from 'primeng/api';
 import { Location } from '@angular/common';
 import { BranchService } from './branch.service';
 
@@ -37,8 +36,7 @@ export class BranchComponent implements OnInit {
 
  public display: number = 1;
 
- constructor(private branchService: BranchService, private router: Router,  private messageService: MessageService,
-   private confirmationService: ConfirmationService, public actRoute: ActivatedRoute,private location: Location) { }
+ constructor(private branchService: BranchService, private router: Router, public actRoute: ActivatedRoute,private location: Location) { }
 
  
  ngOnInit(): void {

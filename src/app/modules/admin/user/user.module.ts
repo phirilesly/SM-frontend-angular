@@ -9,7 +9,6 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { ToastModule } from 'primeng/toast';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -45,7 +44,6 @@ const userRoutes: Route[] = [
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
-    ToastModule,
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,

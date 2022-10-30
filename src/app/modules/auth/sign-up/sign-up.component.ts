@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertType } from '@fuse/components/alert';
 import { AuthService } from 'app/core/auth/auth.service';
+import { User } from 'app/shared/models/auth.model';
+import { AuthhService } from 'app/shared/services/auth.services';
 
 @Component({
     selector     : 'auth-sign-up',
@@ -13,6 +15,9 @@ import { AuthService } from 'app/core/auth/auth.service';
 })
 export class AuthSignUpComponent implements OnInit
 {
+
+    user = new User();
+
     @ViewChild('signUpNgForm') signUpNgForm: NgForm;
 
     alert: { type: FuseAlertType; message: string } = {
@@ -28,7 +33,8 @@ export class AuthSignUpComponent implements OnInit
     constructor(
         private _authService: AuthService,
         private _formBuilder: FormBuilder,
-        private _router: Router
+        private _router: Router,
+        private authService: AuthhService
     )
     {
     }
@@ -52,6 +58,34 @@ export class AuthSignUpComponent implements OnInit
             }
         );
     }
+
+    register(user: User) {
+        this.authService.register(user).subscribe(
+            (response) => {
+
+            // Navigate to the confirmation required page
+            this._router.navigateByUrl('sign-in');
+        },
+        (response) => {
+
+            // Re-enable the form
+            this.signUpForm.enable();
+
+            // Reset the form
+            this.signUpNgForm.resetForm();
+
+            // Set the alert
+            this.alert = {
+                type   : 'error',
+                message: 'Something went wrong, please try again.'
+            };
+
+            // Show the alert
+            this.showAlert = true;
+        }
+    );
+};
+      
 
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods

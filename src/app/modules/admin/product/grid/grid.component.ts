@@ -3,7 +3,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConfirmationService, MessageService } from 'primeng/api';
 import { ProductService } from '../product.service';
 import { Location } from '@angular/common';
 
@@ -25,8 +24,7 @@ export class GridComponent implements OnInit {
   productData: any = [];
 
 
-  constructor(private productsService: ProductService, private router: Router,  private messageService: MessageService,
-    private confirmationService: ConfirmationService, public actRoute: ActivatedRoute,private location: Location) { }
+  constructor(private productsService: ProductService, private router: Router,  public actRoute: ActivatedRoute,private location: Location) { }
 
     ngOnInit(): void {
       this.getProducts();

@@ -10,8 +10,6 @@ import { GridComponent } from './grid/grid.component';
 import { FuseCardModule } from '@fuse/components/card';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { ConfirmationService, MessageService } from 'primeng/api';
-import { ToastModule } from 'primeng/toast';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddComponent } from './add/add.component';
@@ -58,15 +56,11 @@ const productRoutes: Route[] = [
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
-    ToastModule,
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(productRoutes)
   ],
-  providers: [
-    ConfirmationService,
-    MessageService
-  ]
+ 
 })
 export class ProductModule { }

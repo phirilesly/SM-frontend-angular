@@ -6,7 +6,6 @@ import { Product } from 'app/shared/models/product.model';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { ConfirmationService, MessageService } from 'primeng/api';
 import { Location } from '@angular/common';
 import { InventoryService } from '../inventory.service';
 
@@ -33,8 +32,7 @@ export class GridComponent implements OnInit {
  
   public display: number = 1;
  
-  constructor(private inventoriesService: InventoryService, private router: Router,  private messageService: MessageService,
-    private confirmationService: ConfirmationService, public actRoute: ActivatedRoute,private location: Location) { }
+  constructor(private inventoriesService: InventoryService, private router: Router,  public actRoute: ActivatedRoute,private location: Location) { }
  
   
   ngOnInit(): void {

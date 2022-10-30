@@ -1,3 +1,4 @@
+import { LandingComponent } from './modules/admin/landing/landing.component';
 import { Route } from '@angular/router';
 import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
@@ -51,6 +52,8 @@ export const appRoutes: Route[] = [
         ]
     },
 
+    // { path: 'home', component: LandingComponent },
+
     // Landing routes
     {
         path: '',
@@ -71,8 +74,7 @@ export const appRoutes: Route[] = [
     // Admin routes
     {
         path       : '',
-        canActivate: [AuthGuard],
-        canActivateChild: [AuthGuard],
+       
         component  : LayoutComponent,
         data: {
             layout: 'classic'

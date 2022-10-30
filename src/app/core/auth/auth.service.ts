@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, of, switchMap, throwError } from 'rxjs';
 import { AuthUtils } from 'app/core/auth/auth.utils';
 import { UserService } from 'app/core/user/user.service';
+import { User } from 'app/shared/models/auth.model';
+
 
 @Injectable()
 export class AuthService
@@ -65,7 +67,7 @@ export class AuthService
      *
      * @param credentials
      */
-    signIn(credentials: { email: string; password: string }): Observable<any>
+    signIn(user: User): Observable<any>
     {
         // Throw error, if the user is already logged in
         if ( this._authenticated )
@@ -73,9 +75,12 @@ export class AuthService
             return throwError('User is already logged in.');
         }
 
-        return this._httpClient.post('api/auth/sign-in', credentials).pipe(
-            switchMap((response: any) => {
+    
 
+        return this._httpClient.post('https://localhost:44390/api/Auth/login', user).pipe(
+            switchMap((response: any) => {
+             
+                
                 // Store the access token in the local storage
                 this.accessToken = response.accessToken;
 
@@ -84,6 +89,7 @@ export class AuthService
 
                 // Store the user on the user service
                 this._userService.user = response.user;
+                console.log(response.user);
 
                 // Return a new observable with the response
                 return of(response);

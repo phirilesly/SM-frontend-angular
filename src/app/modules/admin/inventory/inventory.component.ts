@@ -6,7 +6,6 @@ import { Product } from 'app/shared/models/product.model';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { ConfirmationService, MessageService } from 'primeng/api';
 import { Location } from '@angular/common';
 import { InventoryService } from './inventory.service';
 

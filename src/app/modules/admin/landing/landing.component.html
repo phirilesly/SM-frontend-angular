@@ -1,68 +1,26 @@
-<div
-        class="flex h-full flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0">
-      <div
-    class="w-1/2 relative hidden md:flex flex-auto items-center justify-center h-full p-16 lg:px-28 overflow-hidden bg-gray-800 dark:border-r">
-    <header class="flex flex-row justify-between">
-        <a href="#"><img src="assets/images/logo1.png" class="logo"></a>
-          <ul class="thumb">
-            <li><a href="#"> Home</a> </li>
-            <li><a href="#"> Support</a> </li>
-            <li><a href="#"> Documentation</a> </li>
-          </ul>
-    </header>
-        <!-- Rings -->
-        <svg class="absolute inset-0 pointer-events-none" viewBox="0 0 960 540" width="100%" height="100%"
-            preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-            <g class="text-gray-700 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
-                <circle r="234" cx="196" cy="23"></circle>
-                <circle r="234" cx="790" cy="491"></circle>
-            </g>
-        </svg>
-        <!-- Dots -->
-        <svg class="absolute -top-16 -right-16 text-gray-700" viewBox="0 0 220 192" width="220" height="192" fill="none">
-            <defs>
-                <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
-                    patternUnits="userSpaceOnUse">
-                    <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>
-                </pattern>
-            </defs>
-            <rect width="220" height="192" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-        </svg>
-        <!-- Content -->
-        <div class="z-10 relative w-full max-w-2xl flex flex-col">
-    
-            <div class="w-full flex flex-row justify-between">
-                <div class="flex flex-col">
-                    <div class="text-7xl font-normal leading-none text-gray-100">
-        
-                        <div>Sign in to Realty365</div>
-                    </div>
-                    <div class="mt-2 text-lg tracking-tight leading-6 text-gray-400">
-                        Realty365 enables paperless  day to day management of your properties or business.
-                    </div>
-                </div>
-                
-           <div class="mr-3 imgBox">
-                <img class="accessDenied" width="100">
-            </div>
-            </div>
-            <div class="flex flex-col mt-4">
-                <div class="rounded w-full bg-info-900 text-white text-center text-base uppercase py-3 cursor-pointer font-bold hover:opacity-75 shadow" >
-                    Sign in
-                </div>
-                <a routerLink="/sign-in"> Login</a>
-                <div class="w-full my-4 text-center text-gray-300">           
-                  <div class="flex items-center w-full">
-                            <div class="flex-auto mt-px border-t border-gray-300"></div>
-                            <div class="mx-2 uppercase font-bold">OR</div>
-                            <div class="flex-auto mt-px border-t border-gray-300"></div>
-                  </div>
-                </div>
-                <div class="rounded w-full shadow bg-primary-800 text-white text-center text-base uppercase py-3 cursor-pointer font-bold hover:opacity-75">
-                    Sign up
-                </div>
-                <a routerLink="/sign-up">Sign Up</a>
-            </div>
-        </div>
+
+<div class="landing-page w-full">
+    <div class="container">
+      <div class="header-area">
+        <div class="logo"><a href="#"><img src="assets/images/logo1.png"></a></div>
+        <ul class="links">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Work</li>
+          <li>Info</li>
+          <li routerLink="/sign-in">Sign In</li>
+        </ul>
+      </div>
+      <div class="info">
+        <h1>Smart Mushika</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
+        <button routerLink="/sign-up">Get Started</button>
+      </div>
+      <div class="image">
+        <img src="assets/images/image2.png">
+      </div>
+      <div class="clearfix"></div>
     </div>
-</div>
+  </div>
+
+
